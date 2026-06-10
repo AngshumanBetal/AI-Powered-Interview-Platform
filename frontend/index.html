@@ -1,67 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InterviewAI</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InterviewAI | AI-Powered Interview Platform</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="logo" href="index.html">InterviewAI</a>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            <h2>InterviewAI</h2>
-        </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-
-        <button>Login</button>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="login/login.html">Login</a>
+        <a class="btn btn-primary" href="register/register.html">Register</a>
+      </div>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
+  <main>
     <section class="hero">
-
+      <div class="hero-content">
+        <p class="eyebrow">Practice smarter. Interview better.</p>
         <h1>AI-Powered Virtual Interview Platform</h1>
-
-        <p>
-            Practice real interviews, receive AI feedback,
-            improve your confidence and prepare for your dream job.
+        <p class="hero-text">
+          Prepare for real interviews with AI-generated questions, instant feedback,
+          performance tracking, and role-based practice sessions.
         </p>
-
-        <button>Start Interview</button>
-
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="interview/interview.html">Start Interview</a>
+          <a class="btn btn-secondary" href="dashboard/dashboard.html">View Dashboard</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <section class="section" id="features">
+      <div class="section-heading">
+        <p class="eyebrow">Features</p>
+        <h2>Everything you need for interview preparation</h2>
+      </div>
 
-        <div class="card">
-            <h3>AI Interviewer</h3>
-            <p>AI conducts interviews like a real interviewer.</p>
-        </div>
+      <div class="feature-grid">
+        <article class="card">
+          <h3>AI Interviewer</h3>
+          <p>Practice with realistic questions based on your target role and experience level.</p>
+        </article>
 
-        <div class="card">
-            <h3>Instant Feedback</h3>
-            <p>Get detailed feedback on every answer.</p>
-        </div>
+        <article class="card">
+          <h3>Instant Feedback</h3>
+          <p>Review answer quality, clarity, confidence, and improvement suggestions.</p>
+        </article>
 
-        <div class="card">
-            <h3>Performance Tracking</h3>
-            <p>Track your interview performance over time.</p>
-        </div>
-
+        <article class="card">
+          <h3>Progress Tracking</h3>
+          <p>Track interview attempts, average scores, and performance growth over time.</p>
+        </article>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 InterviewAI. All Rights Reserved.</p>
-    </footer>
+    <section class="section section-muted" id="how-it-works">
+      <div class="section-heading">
+        <p class="eyebrow">How It Works</p>
+        <h2>Start practicing in three simple steps</h2>
+      </div>
 
+      <div class="steps">
+        <article class="step">
+          <span>01</span>
+          <h3>Create your profile</h3>
+          <p>Add your target role, skills, and experience information.</p>
+        </article>
+
+        <article class="step">
+          <span>02</span>
+          <h3>Take an interview</h3>
+          <p>Answer AI-generated interview questions in a focused practice session.</p>
+        </article>
+
+        <article class="step">
+          <span>03</span>
+          <h3>Review results</h3>
+          <p>Use detailed feedback to improve before your next real interview.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Need help with your interview preparation?</h2>
+        <p>Email: support@interviewai.com</p>
+        <p>Phone: +91 9876543210</p>
+      </div>
+      <a class="btn btn-primary" href="register/register.html">Get Started</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 InterviewAI. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
