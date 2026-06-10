@@ -63,14 +63,38 @@ AI-Powered-Interview-Platform/
 
 frontend/
 │
+├── dashboard/
+│   ├── dashboard.html
+│   └── dashboard.css
+│
+├── interview/
+│   ├── interview.html
+│   └── interview.css
+│
+├── login/
+│   ├── login.html
+│   └── login.css
+│
+├── profile/
+│   ├── profile.html
+│   └── profile.css
+│
+├── register/
+│   ├── register.html
+│   └── register.css
+│
+├── result/
+│   ├── result.html
+│   └── result.css
+│
 ├── index.html
 ├── style.css
 ├── script.js
-
+│
 backend/
-
+│
 docs/
-
+│
 README.md
 LICENSE
 .gitignore
