@@ -8,47 +8,96 @@ body{
     font-family:Arial, sans-serif;
 }
 
+/* Navbar */
+
 nav{
+    background:#0f172a;
+    color:white;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 50px;
-    background:#111827;
-    color:white;
+
+    padding:20px 60px;
 }
 
 nav ul{
-    display:flex;
     list-style:none;
+    display:flex;
     gap:20px;
 }
 
 nav a{
-    color:white;
     text-decoration:none;
+    color:white;
 }
 
+nav button{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* Hero */
+
 .hero{
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
     text-align:center;
-    gap:20px;
+    padding:120px 20px;
 }
 
 .hero h1{
-    font-size:3rem;
+    font-size:48px;
+    margin-bottom:20px;
 }
 
 .hero p{
-    width:60%;
-    font-size:1.2rem;
+    max-width:700px;
+    margin:auto;
+    margin-bottom:25px;
+    line-height:1.6;
 }
 
-button{
-    padding:12px 20px;
-    margin:10px;
+.hero button{
+    padding:12px 25px;
+    border:none;
+    border-radius:5px;
+    background:#2563eb;
+    color:white;
     cursor:pointer;
+}
+
+/* Features */
+
+.features{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+
+    padding:50px;
+}
+
+.card{
+    width:300px;
+    padding:25px;
+
+    border:1px solid #ddd;
+    border-radius:10px;
+
+    text-align:center;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+    background:#0f172a;
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
 }
