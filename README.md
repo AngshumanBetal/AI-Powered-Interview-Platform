@@ -229,9 +229,10 @@ Last Updated:
 
 ## 👨‍💻 Developer
 
-Babai (BCA Student)
+Angshuman Betal(BCA - AMEX a group of institution)
+contact - angshumanbetal62@gmail.com
 
-Learning Philosophy:
+Learning Full Stack Web Development:
 
 > Learn With Practical.
 > Build First. Learn Along The Way.
