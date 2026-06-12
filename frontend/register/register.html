@@ -3,25 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your InterviewAI account and start practicing interviews with AI-powered feedback.">
   <title>Register | InterviewAI</title>
+  <link rel="stylesheet" href="../shared.css">
   <link rel="stylesheet" href="register.css">
 </head>
 <body>
   <main class="auth-page">
-    <section class="auth-panel">
-      <a class="brand" href="../index.html">InterviewAI</a>
+    <div class="auth-glow"></div>
+    <section class="auth-panel glass-card animate-fade-up">
+      <a class="logo" href="../index.html">InterviewAI</a>
       <h1>Create your account</h1>
-      <p>Set up your profile and start practicing interviews.</p>
+      <p class="auth-subtitle">Set up your profile and start practicing interviews.</p>
 
       <form>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="name@example.com" required>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required>
+        </div>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Create a strong password"
+            required
+            minlength="6"
+            oninput="checkStrength(this.value)"
+          >
+          <!-- Password Strength Meter -->
+          <div class="strength-meter">
+            <div class="strength-bar" id="strength-bar"></div>
+          </div>
+          <div class="strength-info">
+            <span class="strength-label" id="strength-label">Enter at least 6 characters</span>
+            <ul class="strength-rules" id="strength-rules">
+              <li id="rule-length">✕ Minimum 6 characters</li>
+              <li id="rule-upper">✕ One uppercase letter</li>
+              <li id="rule-number">✕ One number</li>
+              <li id="rule-special">✕ One special character (!@#$%)</li>
+            </ul>
+          </div>
+        </div>
 
         <button type="submit">Create Account</button>
       </form>
@@ -29,5 +59,63 @@
       <p class="helper-text">Already registered? <a href="../login/login.html">Login</a></p>
     </section>
   </main>
+
+  <script>
+    function checkStrength(password) {
+      const bar = document.getElementById('strength-bar');
+      const label = document.getElementById('strength-label');
+      const ruleLength = document.getElementById('rule-length');
+      const ruleUpper = document.getElementById('rule-upper');
+      const ruleNumber = document.getElementById('rule-number');
+      const ruleSpecial = document.getElementById('rule-special');
+
+      let score = 0;
+      const hasLength = password.length >= 6;
+      const hasUpper = /[A-Z]/.test(password);
+      const hasNumber = /[0-9]/.test(password);
+      const hasSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+
+      ruleLength.textContent = (hasLength ? '✓' : '✕') + ' Minimum 6 characters';
+      ruleLength.className = hasLength ? 'pass' : '';
+      ruleUpper.textContent = (hasUpper ? '✓' : '✕') + ' One uppercase letter';
+      ruleUpper.className = hasUpper ? 'pass' : '';
+      ruleNumber.textContent = (hasNumber ? '✓' : '✕') + ' One number';
+      ruleNumber.className = hasNumber ? 'pass' : '';
+      ruleSpecial.textContent = (hasSpecial ? '✓' : '✕') + ' One special character (!@#$%)';
+      ruleSpecial.className = hasSpecial ? 'pass' : '';
+
+      if (hasLength) score++;
+      if (hasUpper) score++;
+      if (hasNumber) score++;
+      if (hasSpecial) score++;
+
+      if (password.length === 0) {
+        bar.style.width = '0%';
+        bar.className = 'strength-bar';
+        label.textContent = 'Enter at least 6 characters';
+        label.className = 'strength-label';
+      } else if (score <= 1) {
+        bar.style.width = '25%';
+        bar.className = 'strength-bar weak';
+        label.textContent = '🔴 Weak Password';
+        label.className = 'strength-label weak';
+      } else if (score === 2) {
+        bar.style.width = '50%';
+        bar.className = 'strength-bar fair';
+        label.textContent = '🟠 Fair Password';
+        label.className = 'strength-label fair';
+      } else if (score === 3) {
+        bar.style.width = '75%';
+        bar.className = 'strength-bar good';
+        label.textContent = '🟡 Good Password';
+        label.className = 'strength-label good';
+      } else {
+        bar.style.width = '100%';
+        bar.className = 'strength-bar strong';
+        label.textContent = '🟢 Strong Password';
+        label.className = 'strength-label strong';
+      }
+    }
+  </script>
 </body>
 </html>

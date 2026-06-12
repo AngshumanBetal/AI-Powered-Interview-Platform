@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your mock interview activity, scores, and preparation progress on your InterviewAI dashboard.">
   <title>Dashboard | InterviewAI</title>
+  <link rel="stylesheet" href="../shared.css">
   <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
   <header class="topbar">
     <a class="logo" href="../index.html">InterviewAI</a>
     <nav>
-      <a href="dashboard.html">Dashboard</a>
+      <a href="dashboard.html" aria-current="page">Dashboard</a>
       <a href="../interview/interview.html">Interview</a>
       <a href="../result/result.html">Results</a>
       <a href="../profile/profile.html">Profile</a>
@@ -18,33 +20,64 @@
   </header>
 
   <main class="dashboard">
-    <section class="page-heading">
+    <section class="page-heading animate-fade-up">
+      <span class="eyebrow">Overview</span>
       <h1>Dashboard</h1>
       <p>Track your mock interview activity and preparation progress.</p>
     </section>
 
     <section class="stats" aria-label="Interview statistics">
-      <article>
-        <span>0</span>
+      <article class="stat-card glass-card animate-fade-up delay-1">
+        <div class="stat-icon stat-icon--primary">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <span class="stat-value">0</span>
         <p>Completed Interviews</p>
       </article>
-      <article>
-        <span>0%</span>
+      <article class="stat-card glass-card animate-fade-up delay-2">
+        <div class="stat-icon stat-icon--accent">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <span class="stat-value">0%</span>
         <p>Average Score</p>
       </article>
-      <article>
-        <span>0</span>
+      <article class="stat-card glass-card animate-fade-up delay-3">
+        <div class="stat-icon stat-icon--warm">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <span class="stat-value">0</span>
         <p>Pending Reviews</p>
       </article>
     </section>
 
-    <section class="panel">
-      <div>
+    <section class="panel glass-card animate-fade-up delay-4">
+      <div class="panel-content">
         <h2>Ready for your next practice session?</h2>
         <p>Start an interview, answer role-based questions, and review your feedback.</p>
       </div>
-      <a class="btn" href="../interview/interview.html">Start Interview</a>
+      <a class="btn btn-primary" href="../interview/interview.html">Start Interview</a>
     </section>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        const history = JSON.parse(localStorage.getItem('interviewHistory') || '[]');
+        if (history.length > 0) {
+          const completedCount = history.length;
+          const totalScore = history.reduce((sum, item) => sum + (item.score || 0), 0);
+          const averageScore = Math.round(totalScore / completedCount);
+
+          const values = document.querySelectorAll('.stat-value');
+          if (values.length >= 2) {
+            values[0].textContent = completedCount;
+            values[1].textContent = averageScore + '%';
+          }
+        }
+      } catch (e) {
+        console.error('Failed to load dashboard stats:', e);
+      }
+    });
+  </script>
 </body>
 </html>

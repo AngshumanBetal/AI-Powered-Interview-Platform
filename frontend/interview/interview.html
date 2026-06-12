@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Take an AI-powered mock interview with role-based questions and instant evaluation.">
   <title>Interview | InterviewAI</title>
+  <link rel="stylesheet" href="../shared.css">
   <link rel="stylesheet" href="interview.css">
 </head>
 <body>
@@ -11,26 +13,493 @@
     <a class="logo" href="../index.html">InterviewAI</a>
     <nav>
       <a href="../dashboard/dashboard.html">Dashboard</a>
-      <a href="interview.html">Interview</a>
+      <a href="interview.html" aria-current="page">Interview</a>
       <a href="../result/result.html">Results</a>
       <a href="../profile/profile.html">Profile</a>
     </nav>
   </header>
 
   <main class="interview-page">
-    <section class="question-panel">
-      <p class="eyebrow">Mock Interview</p>
-      <h1>Frontend Developer Interview</h1>
-      <p class="question">Tell us about yourself and explain why you are interested in this role.</p>
 
-      <label for="answer">Your Answer</label>
-      <textarea id="answer" name="answer" placeholder="Type your answer here..."></textarea>
+    <!-- ═══ Step 1: Choose Field + Upload CV ═══ -->
+    <section class="field-selector glass-card animate-fade-up" id="step-setup">
+      <div class="field-header">
+        <span class="eyebrow">Step 1</span>
+        <h1>Choose Your Interview Field</h1>
+        <p class="field-subtitle">Select your preferred IT domain to get role-specific interview questions.</p>
+      </div>
+
+      <div class="field-grid">
+        <label class="field-card">
+          <input type="radio" name="field" value="Data Science" checked>
+          <div class="field-card-inner">
+            <div class="field-icon field-icon--purple">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3>Data Science</h3>
+            <p>Statistics, data analysis, visualization, big data tools</p>
+          </div>
+        </label>
+
+        <label class="field-card">
+          <input type="radio" name="field" value="Artificial Intelligence">
+          <div class="field-card-inner">
+            <div class="field-icon field-icon--teal">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Artificial Intelligence</h3>
+            <p>Neural networks, NLP, computer vision, deep learning</p>
+          </div>
+        </label>
+
+        <label class="field-card">
+          <input type="radio" name="field" value="Machine Learning">
+          <div class="field-card-inner">
+            <div class="field-icon field-icon--amber">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Machine Learning</h3>
+            <p>Supervised, unsupervised learning, model training, scikit-learn</p>
+          </div>
+        </label>
+
+        <label class="field-card">
+          <input type="radio" name="field" value="Web Development">
+          <div class="field-card-inner">
+            <div class="field-icon field-icon--blue">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript, React, Node.js, full-stack</p>
+          </div>
+        </label>
+
+        <label class="field-card">
+          <input type="radio" name="field" value="Cloud Computing">
+          <div class="field-card-inner">
+            <div class="field-icon field-icon--cyan">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <h3>Cloud Computing</h3>
+            <p>AWS, Azure, GCP, DevOps, microservices, Docker</p>
+          </div>
+        </label>
+
+        <label class="field-card">
+          <input type="radio" name="field" value="Cybersecurity">
+          <div class="field-card-inner">
+            <div class="field-icon field-icon--red">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Cybersecurity</h3>
+            <p>Network security, ethical hacking, encryption, SIEM</p>
+          </div>
+        </label>
+
+        <label class="field-card">
+          <input type="radio" name="field" value="Mobile Development">
+          <div class="field-card-inner">
+            <div class="field-icon field-icon--green">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3>Mobile Development</h3>
+            <p>Android, iOS, Flutter, React Native, Kotlin, Swift</p>
+          </div>
+        </label>
+
+        <label class="field-card">
+          <input type="radio" name="field" value="Database & SQL">
+          <div class="field-card-inner">
+            <div class="field-icon field-icon--pink">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3>Database & SQL</h3>
+            <p>MySQL, PostgreSQL, MongoDB, database design, queries</p>
+          </div>
+        </label>
+      </div>
+
+      <!-- ── CV Upload ─────────────────────────────────────────────── -->
+      <div class="cv-upload-section">
+        <h2>Upload Your CV <span class="optional-tag">Optional</span></h2>
+        <p class="cv-desc">Attach your resume for personalized questions based on your skills and experience.</p>
+
+        <label class="cv-dropzone" id="cv-dropzone">
+          <input type="file" id="cv-file" accept=".pdf,.doc,.docx,.txt" hidden>
+          <div class="cv-dropzone-content" id="cv-dropzone-content">
+            <div class="cv-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
+            </div>
+            <span class="cv-label">Click to upload or drag your file here</span>
+            <span class="cv-formats">Supports PDF, DOC, DOCX, TXT (Max 5MB)</span>
+          </div>
+        </label>
+        <div class="cv-file-info" id="cv-file-info" style="display:none;">
+          <div class="cv-file-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span id="cv-file-name"></span>
+            <button type="button" class="cv-remove" id="cv-remove" title="Remove file">✕</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── API Key ───────────────────────────────────────────────── -->
+      <div class="api-key-section">
+        <label for="api-key">
+          Gemini API Key
+          <a href="https://aistudio.google.com/apikey" target="_blank" class="api-help">Get free key →</a>
+        </label>
+        <input type="password" id="api-key" placeholder="Enter your Gemini API key" autocomplete="off">
+      </div>
+
+      <!-- ── Start Button ──────────────────────────────────────────── -->
+      <div class="field-action">
+        <button type="button" class="btn btn-primary" id="btn-start-interview">
+          Start AI Interview
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+
+      <!-- Error message -->
+      <div class="error-msg" id="setup-error" style="display:none;"></div>
+    </section>
+
+    <!-- ═══ Loading State ═══ -->
+    <section class="loading-panel glass-card" id="loading-panel" style="display:none;">
+      <div class="loader-ring"></div>
+      <h2>Generating Interview Questions...</h2>
+      <p>Gemini AI is preparing role-specific questions for you.</p>
+    </section>
+
+    <!-- ═══ Step 2: Interview Panel (AI-powered) ═══ -->
+    <section class="question-panel glass-card" id="interview-panel" style="display:none;">
+      <div class="question-header">
+        <span class="eyebrow" id="step-label">Step 2 — Mock Interview</span>
+        <div class="interview-meta">
+          <span class="meta-badge" id="question-counter">Question 1 of 5</span>
+          <span class="meta-badge meta-badge--accent" id="selected-field-badge">Data Science</span>
+        </div>
+      </div>
+
+      <h1 id="question-title">Loading...</h1>
+      <p class="question-text" id="question-text"></p>
+
+      <div class="answer-section">
+        <label for="answer">Your Answer</label>
+        <textarea id="answer" name="answer" placeholder="Type your answer here..." rows="8"></textarea>
+      </div>
 
       <div class="actions">
-        <button type="button">Submit Answer</button>
-        <a href="../result/result.html">View Result</a>
+        <button type="button" class="btn btn-primary" id="btn-submit-answer">
+          Submit Answer
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button type="button" class="btn btn-secondary" id="btn-skip" style="display:none;">Skip Question</button>
       </div>
+
+      <!-- Error message -->
+      <div class="error-msg" id="interview-error" style="display:none;"></div>
     </section>
+
+    <!-- ═══ Evaluating State ═══ -->
+    <section class="loading-panel glass-card" id="evaluating-panel" style="display:none;">
+      <div class="loader-ring"></div>
+      <h2>Evaluating Your Answers...</h2>
+      <p>Gemini AI is analyzing your performance and generating feedback.</p>
+    </section>
+
   </main>
+
+  <script>
+    /* ================================================================
+       InterviewAI — Gemini API Interview Engine
+       ================================================================ */
+
+    // ── State ──────────────────────────────────────────────────────
+    let questions = [];
+    let answers = [];
+    let currentQ = 0;
+    let selectedField = 'Data Science';
+    let cvText = '';
+    const TOTAL_QUESTIONS = 5;
+
+    // Helper to extract clean JSON block (array or object) from API response
+    function extractJSON(text, type = 'object') {
+      const startChar = type === 'array' ? '[' : '{';
+      const endChar = type === 'array' ? ']' : '}';
+      const start = text.indexOf(startChar);
+      const end = text.lastIndexOf(endChar);
+      if (start !== -1 && end !== -1 && end > start) {
+        return text.substring(start, end + 1);
+      }
+      return text.trim();
+    }
+
+    // ── DOM refs ───────────────────────────────────────────────────
+    const $setup       = document.getElementById('step-setup');
+    const $loading     = document.getElementById('loading-panel');
+    const $interview   = document.getElementById('interview-panel');
+    const $evaluating  = document.getElementById('evaluating-panel');
+    const $setupError  = document.getElementById('setup-error');
+    const $intError    = document.getElementById('interview-error');
+    const $qTitle      = document.getElementById('question-title');
+    const $qText       = document.getElementById('question-text');
+    const $qCounter    = document.getElementById('question-counter');
+    const $fieldBadge  = document.getElementById('selected-field-badge');
+    const $answer      = document.getElementById('answer');
+    const $btnStart    = document.getElementById('btn-start-interview');
+    const $btnSubmit   = document.getElementById('btn-submit-answer');
+    const $btnSkip     = document.getElementById('btn-skip');
+    const $cvFile      = document.getElementById('cv-file');
+    const $cvDropzone  = document.getElementById('cv-dropzone');
+    const $cvContent   = document.getElementById('cv-dropzone-content');
+    const $cvFileInfo  = document.getElementById('cv-file-info');
+    const $cvFileName  = document.getElementById('cv-file-name');
+    const $cvRemove    = document.getElementById('cv-remove');
+
+    // ── Field selection ────────────────────────────────────────────
+    document.querySelectorAll('input[name="field"]').forEach(function(r) {
+      r.addEventListener('change', function() {
+        selectedField = this.value;
+        $fieldBadge.textContent = this.value;
+      });
+    });
+
+    // ── CV Upload ──────────────────────────────────────────────────
+    $cvDropzone.addEventListener('click', function() { $cvFile.click(); });
+
+    $cvDropzone.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      this.classList.add('dragover');
+    });
+    $cvDropzone.addEventListener('dragleave', function() {
+      this.classList.remove('dragover');
+    });
+    $cvDropzone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      this.classList.remove('dragover');
+      if (e.dataTransfer.files.length) {
+        $cvFile.files = e.dataTransfer.files;
+        handleCVFile($cvFile.files[0]);
+      }
+    });
+
+    $cvFile.addEventListener('change', function() {
+      if (this.files.length) handleCVFile(this.files[0]);
+    });
+
+    $cvRemove.addEventListener('click', function() {
+      cvText = '';
+      $cvFile.value = '';
+      $cvFileInfo.style.display = 'none';
+      $cvDropzone.style.display = '';
+    });
+
+    function handleCVFile(file) {
+      if (file.size > 5 * 1024 * 1024) {
+        showError($setupError, 'File size must be under 5MB.');
+        return;
+      }
+      $cvFileName.textContent = file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)';
+      $cvFileInfo.style.display = '';
+      $cvDropzone.style.display = 'none';
+
+      // Read text content (works for .txt, partially for others)
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        cvText = e.target.result || '';
+        // For non-text files, just use the filename as context
+        if (cvText.length < 10 || cvText.includes('\ufffd')) {
+          cvText = 'CV file uploaded: ' + file.name;
+        }
+        // Limit CV text to ~3000 chars for API
+        if (cvText.length > 3000) cvText = cvText.substring(0, 3000);
+      };
+      reader.readAsText(file);
+    }
+
+    // ── Show/Hide helpers ──────────────────────────────────────────
+    function showSection(el) { el.style.display = ''; }
+    function hideSection(el) { el.style.display = 'none'; }
+
+    function showError(el, msg) {
+      el.textContent = msg;
+      el.style.display = '';
+      setTimeout(function() { el.style.display = 'none'; }, 6000);
+    }
+
+    // ── Gemini API call ────────────────────────────────────────────
+    async function callGemini(apiKey, prompt) {
+      const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + apiKey;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { temperature: 0.7 }
+        })
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(function() { return {}; });
+        throw new Error(err.error?.message || 'API request failed (' + res.status + ')');
+      }
+      const data = await res.json();
+      return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    }
+
+    // ── Generate Questions ─────────────────────────────────────────
+    $btnStart.addEventListener('click', async function() {
+      const apiKey = document.getElementById('api-key').value.trim();
+      if (!apiKey) {
+        showError($setupError, 'Please enter your Gemini API key to start the interview.');
+        return;
+      }
+
+      hideSection($setup);
+      showSection($loading);
+
+      const cvContext = cvText
+        ? '\n\nThe candidate has uploaded their CV. Here is the content:\n' + cvText + '\n\nUse this CV information to personalize the questions.'
+        : '';
+
+      const prompt = 'You are an expert technical interviewer for the field: ' + selectedField + '.' + cvContext + '\n\n'
+        + 'Generate exactly ' + TOTAL_QUESTIONS + ' interview questions for a candidate applying in ' + selectedField + '.\n'
+        + 'Mix the difficulty: 2 easy, 2 medium, 1 hard.\n'
+        + 'Return ONLY a valid JSON array of objects, nothing else. No markdown, no code fences.\n'
+        + 'Each object must have: "id" (number 1-5), "question" (the question text), "difficulty" (easy/medium/hard).\n'
+        + 'Example: [{"id":1,"question":"What is...","difficulty":"easy"}]';
+
+      try {
+        const raw = await callGemini(apiKey, prompt);
+        const cleaned = extractJSON(raw, 'array');
+        questions = JSON.parse(cleaned);
+        if (!Array.isArray(questions) || questions.length === 0) throw new Error('Invalid response');
+
+        answers = new Array(questions.length).fill('');
+        currentQ = 0;
+
+        hideSection($loading);
+        showSection($interview);
+        renderQuestion();
+      } catch (err) {
+        hideSection($loading);
+        showSection($setup);
+        showError($setupError, 'Error: ' + err.message);
+      }
+    });
+
+    // ── Render current question ────────────────────────────────────
+    function renderQuestion() {
+      const q = questions[currentQ];
+      $qCounter.textContent = 'Question ' + (currentQ + 1) + ' of ' + questions.length;
+      $qTitle.textContent = 'Question ' + (currentQ + 1);
+
+      // Show difficulty badge
+      const diffColors = { easy: '#00d2a0', medium: '#fdcb6e', hard: '#ff6b6b' };
+      $qText.textContent = q.question;
+
+      $answer.value = answers[currentQ] || '';
+      $answer.focus();
+
+      // Update button text for last question
+      if (currentQ === questions.length - 1) {
+        $btnSubmit.innerHTML = 'Finish Interview <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+      } else {
+        $btnSubmit.innerHTML = 'Next Question <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+        $btnSkip.style.display = '';
+      }
+    }
+
+    // ── Submit / Next ──────────────────────────────────────────────
+    $btnSubmit.addEventListener('click', async function() {
+      const ans = $answer.value.trim();
+      if (!ans) {
+        showError($intError, 'Please type your answer before submitting.');
+        return;
+      }
+      answers[currentQ] = ans;
+
+      if (currentQ < questions.length - 1) {
+        currentQ++;
+        renderQuestion();
+      } else {
+        // All done → evaluate
+        await evaluateInterview();
+      }
+    });
+
+    $btnSkip.addEventListener('click', function() {
+      answers[currentQ] = '(Skipped)';
+      if (currentQ < questions.length - 1) {
+        currentQ++;
+        renderQuestion();
+      } else {
+        evaluateInterview();
+      }
+    });
+
+    // ── Evaluate with Gemini ───────────────────────────────────────
+    async function evaluateInterview() {
+      const apiKey = document.getElementById('api-key').value.trim();
+      hideSection($interview);
+      showSection($evaluating);
+
+      let qaPairs = '';
+      questions.forEach(function(q, i) {
+        qaPairs += '\nQ' + (i+1) + ' (' + q.difficulty + '): ' + q.question + '\nAnswer: ' + answers[i] + '\n';
+      });
+
+      const prompt = 'You are an expert technical interviewer evaluating a candidate for ' + selectedField + '.\n\n'
+        + 'Here are the questions and the candidate\'s answers:\n' + qaPairs + '\n\n'
+        + 'Evaluate the overall performance. Return ONLY valid JSON, no markdown, no code fences.\n'
+        + 'The JSON must have this exact structure:\n'
+        + '{\n'
+        + '  "score": <number 0-100>,\n'
+        + '  "summary": "<2-3 sentence overall summary>",\n'
+        + '  "strengths": ["<strength 1>", "<strength 2>", "<strength 3>"],\n'
+        + '  "improvements": ["<improvement 1>", "<improvement 2>", "<improvement 3>"],\n'
+        + '  "questionFeedback": [\n'
+        + '    {"id": 1, "score": <0-100>, "feedback": "<brief feedback>"}\n'
+        + '  ]\n'
+        + '}';
+
+      try {
+        const raw = await callGemini(apiKey, prompt);
+        const cleaned = extractJSON(raw, 'object');
+        const result = JSON.parse(cleaned);
+
+        // Save to interview history in localStorage
+        try {
+          const history = JSON.parse(localStorage.getItem('interviewHistory') || '[]');
+          history.push({
+            date: new Date().toISOString(),
+            field: selectedField,
+            score: result.score || 0
+          });
+          localStorage.setItem('interviewHistory', JSON.stringify(history));
+        } catch (e) {
+          console.error('Failed to save to localStorage history:', e);
+        }
+
+        // Store result in sessionStorage and navigate to result page
+        sessionStorage.setItem('interviewResult', JSON.stringify({
+          field: selectedField,
+          score: result.score,
+          summary: result.summary,
+          strengths: result.strengths,
+          improvements: result.improvements,
+          questionFeedback: result.questionFeedback,
+          questions: questions,
+          answers: answers
+        }));
+
+        window.location.href = '../result/result.html';
+      } catch (err) {
+        hideSection($evaluating);
+        showSection($interview);
+        showError($intError, 'Evaluation error: ' + err.message);
+      }
+    }
+  </script>
 </body>
 </html>

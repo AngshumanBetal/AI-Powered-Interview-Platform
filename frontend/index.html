@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="InterviewAI — Practice smarter with AI-powered mock interviews, instant feedback, and performance tracking.">
   <title>InterviewAI | AI-Powered Interview Platform</title>
+  <link rel="stylesheet" href="shared.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,10 +28,12 @@
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">Practice smarter. Interview better.</p>
-        <h1>AI-Powered Virtual Interview Platform</h1>
+      <div class="hero-glow"></div>
+      <div class="hero-content animate-fade-up">
+        <span class="eyebrow">Practice smarter. Interview better.</span>
+        <h1>Ace Every Interview with <span class="gradient-text">AI-Powered</span> Practice</h1>
         <p class="hero-text">
           Prepare for real interviews with AI-generated questions, instant feedback,
           performance tracking, and role-based practice sessions.
@@ -41,65 +45,79 @@
       </div>
     </section>
 
+    <!-- Features Section -->
     <section class="section" id="features">
-      <div class="section-heading">
-        <p class="eyebrow">Features</p>
+      <div class="section-heading animate-fade-up">
+        <span class="eyebrow">Features</span>
         <h2>Everything you need for interview preparation</h2>
       </div>
 
       <div class="feature-grid">
-        <article class="card">
+        <article class="card glass-card animate-fade-up delay-1">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M17 10v1a5 5 0 0 1-10 0v-1"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+          </div>
           <h3>AI Interviewer</h3>
           <p>Practice with realistic questions based on your target role and experience level.</p>
         </article>
 
-        <article class="card">
+        <article class="card glass-card animate-fade-up delay-2">
+          <div class="card-icon card-icon--accent">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
           <h3>Instant Feedback</h3>
           <p>Review answer quality, clarity, confidence, and improvement suggestions.</p>
         </article>
 
-        <article class="card">
+        <article class="card glass-card animate-fade-up delay-3">
+          <div class="card-icon card-icon--warm">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
           <h3>Progress Tracking</h3>
           <p>Track interview attempts, average scores, and performance growth over time.</p>
         </article>
       </div>
     </section>
 
+    <!-- How It Works Section -->
     <section class="section section-muted" id="how-it-works">
-      <div class="section-heading">
-        <p class="eyebrow">How It Works</p>
-        <h2>Start practicing in three simple steps</h2>
-      </div>
+      <div class="section-inner">
+        <div class="section-heading animate-fade-up">
+          <span class="eyebrow">How It Works</span>
+          <h2>Start practicing in three simple steps</h2>
+        </div>
 
-      <div class="steps">
-        <article class="step">
-          <span>01</span>
-          <h3>Create your profile</h3>
-          <p>Add your target role, skills, and experience information.</p>
-        </article>
+        <div class="steps">
+          <article class="step glass-card animate-fade-up delay-1">
+            <span class="step-number">01</span>
+            <h3>Create your profile</h3>
+            <p>Add your target role, skills, and experience information.</p>
+          </article>
 
-        <article class="step">
-          <span>02</span>
-          <h3>Take an interview</h3>
-          <p>Answer AI-generated interview questions in a focused practice session.</p>
-        </article>
+          <article class="step glass-card animate-fade-up delay-2">
+            <span class="step-number">02</span>
+            <h3>Take an interview</h3>
+            <p>Answer AI-generated interview questions in a focused practice session.</p>
+          </article>
 
-        <article class="step">
-          <span>03</span>
-          <h3>Review results</h3>
-          <p>Use detailed feedback to improve before your next real interview.</p>
-        </article>
+          <article class="step glass-card animate-fade-up delay-3">
+            <span class="step-number">03</span>
+            <h3>Review results</h3>
+            <p>Use detailed feedback to improve before your next real interview.</p>
+          </article>
+        </div>
       </div>
     </section>
 
+    <!-- Contact / CTA Section -->
     <section class="section contact" id="contact">
-      <div>
-        <p class="eyebrow">Contact</p>
+      <div class="contact-content animate-fade-up">
+        <span class="eyebrow">Contact</span>
         <h2>Need help with your interview preparation?</h2>
         <p>Email: support@interviewai.com</p>
         <p>Phone: +91 9876543210</p>
       </div>
-      <a class="btn btn-primary" href="register/register.html">Get Started</a>
+      <a class="btn btn-accent animate-fade-up delay-2" href="register/register.html">Get Started Free</a>
     </section>
   </main>
 

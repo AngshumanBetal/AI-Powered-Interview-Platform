@@ -5,79 +5,27 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f7fb;
-  color: #111827;
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-}
-
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 18px 32px;
-  background: #ffffff;
-  border-bottom: 1px solid #d9e2ef;
-}
-
-.logo {
-  color: #2563eb;
-  font-size: 24px;
-  font-weight: 800;
-}
-
-nav {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: #5b6678;
-  font-weight: 800;
-}
-
-nav a:hover {
-  color: #2563eb;
+  background: #f4f7fb;
+  color: #172033;
 }
 
 .profile-page {
-  min-height: calc(100vh - 74px);
+  min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 32px 24px;
+  padding: 24px;
 }
 
 .profile-panel {
-  width: min(100%, 620px);
-  padding: 34px;
+  width: min(100%, 520px);
+  padding: 32px;
   background: #ffffff;
-  border: 1px solid #d9e2ef;
+  border: 1px solid #dde4ef;
   border-radius: 8px;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-}
-
-.eyebrow {
-  margin: 0 0 8px;
-  color: #2563eb;
-  font-size: 14px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
 h1 {
-  margin: 0 0 8px;
-  font-size: 34px;
-}
-
-.intro {
   margin: 0 0 24px;
-  color: #5b6678;
 }
 
 form {
@@ -86,21 +34,15 @@ form {
 }
 
 label {
-  font-weight: 800;
+  font-weight: 600;
 }
 
-input,
-textarea {
+input {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #c8d3e1;
+  border: 1px solid #c7d0dd;
   border-radius: 6px;
   font: inherit;
-}
-
-textarea {
-  min-height: 110px;
-  resize: vertical;
 }
 
 button {
@@ -108,20 +50,17 @@ button {
   padding: 12px 16px;
   border: 0;
   border-radius: 6px;
-  background: #2563eb;
+  background: #1f6feb;
   color: #ffffff;
   font: inherit;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
 }
 
-button:hover {
-  background: #1d4ed8;
+.profile-panel {
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-@media (max-width: 700px) {
-  .topbar {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+button:hover {
+background: #1557c0;
 }
