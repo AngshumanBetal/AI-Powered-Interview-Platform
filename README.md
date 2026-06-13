@@ -120,7 +120,7 @@ AI-Powered-Interview-Platform/
 
 **Babai** (BCA Student)
 
-> 🚀 **Learning Philosophy**: Learn With Practical. Build first. Learn along the way.
+> 🚀 **Learning Web Development**: Learn With Practical. Build first. Learn along the way.
 
 ---
 
