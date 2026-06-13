@@ -1,58 +1,39 @@
-# 🎯 InterviewAI - AI Powered Interview Platform
+# 🎯 InterviewAI - AI-Powered Interview Preparation Platform
 
-InterviewAI is a Full Stack AI-Powered Interview Preparation Platform that helps users practice mock interviews, receive AI-generated feedback, track performance, and improve interview skills.
-
----
-
-## 🚀 Project Goal
-
-Build a production-ready AI Interview System using:
-
-* HTML
-* CSS
-* JavaScript
-* Python
-* Django
-* Django REST Framework
-* MySQL
-* Gemini API
-* Git & GitHub
-
-This project follows a **Learn With Practical** approach where every technology is learned while building real project features.
+[![GitHub license](https://img.shields.io/github/license/AngshumanBetal/AI-Powered-Interview-Platform?style=for-the-badge&color=blue)](LICENSE)
+[![Frontend Status](https://img.shields.io/badge/Frontend-V1.0%20Complete-success?style=for-the-badge&logo=html5&logoColor=white)](frontend/)
+[![Backend Status](https://img.shields.io/badge/Backend-Planned-orange?style=for-the-badge&logo=django&logoColor=white)](backend/)
+[![Database Status](https://img.shields.io/badge/Database-MySQL-blue?style=for-the-badge&logo=mysql&logoColor=white)](backend/)
 
 ---
 
-## 🛠️ Tech Stack
+## 📖 Project Overview
 
-### Frontend
+**InterviewAI** is a comprehensive, production-ready mock interview platform designed to help students, developers, and job seekers ace real-world technical and behavioral interviews. By simulating real interview environments, the platform bridges the gap between passive learning and active interview readiness. 
 
-* HTML
-* CSS
-* JavaScript
+Leveraging the power of the **Gemini API**, the application dynamically generates custom questions tailored to specific job roles (e.g., Frontend Developer, Backend Engineer, Data Scientist) and experience levels. It evaluates user responses in real-time, providing immediate scoring, detailed feedback on answer structure, and actionable insights to improve performance. The system follows a progressive learning path where users can track their historical attempts, analyze core strengths and weaknesses, and continuously build their confidence.
 
-### Backend
+---
 
-* Python
-* Django
+## ✨ Key Features
 
-### Database
+*   **Custom AI Question Generation**: Dynamically constructs interview questions based on selected roles, technical skills, and difficulty.
+*   **Real-time AI Feedback & Scoring**: Analyzes submission content, grammar, and technical depth, delivering immediate performance metrics and constructive feedback.
+*   **Performance Analytics Dashboard**: Tracks preparation milestones, average scores, and progress trends over time with visual analytics cards.
+*   **Multi-Role Interview Simulation**: Offers tailored question flows for software engineering, web development, and custom career paths.
+*   **Comprehensive Session History**: Logs all completed mock interviews with full question-and-answer transcripts for reference and self-review.
 
-* MySQL
+---
 
-### API
+## 🛠️ Technology Stack
 
-* Django REST Framework
-
-### AI
-
-* Gemini API
-
-### Tools
-
-* VS Code
-* Git
-* GitHub
-* Postman
+| Layer | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend** | HTML5, CSS3, JavaScript (Vanilla) | Creating a responsive, smooth, glassmorphic, and interactive user interface. |
+| **Backend** | Python, Django, REST Framework | Powering high-performance API endpoints, authentication, and platform logic. |
+| **Database** | MySQL | Storing relational tables for user credentials, interview sessions, and progress metrics. |
+| **AI Engine** | Gemini API | Orchestrating real-time interview question generation and response evaluations. |
+| **Development** | VS Code, Git, GitHub, Postman | Version control, collaborative repository hosting, and REST API endpoint testing. |
 
 ---
 
@@ -60,211 +41,89 @@ This project follows a **Learn With Practical** approach where every technology 
 
 ```text
 AI-Powered-Interview-Platform/
-
-frontend/
-│
-├── index.html
-├── style.css
-├── script.js
-
-backend/
-
-docs/
-
-README.md
-LICENSE
-.gitignore
+├── frontend/                # Client-side web application
+│   ├── index.html           # Main landing page for the application
+│   ├── style.css            # Custom layout and animations for landing page
+│   ├── shared.css           # Global typography, color tokens, and utility classes
+│   ├── script.js            # Frontend router and interactive transitions
+│   ├── dashboard/           # User dashboard for tracking preparation progress
+│   │   ├── dashboard.html   # Dashboard interface layout
+│   │   └── dashboard.css    # Styles for statistics cards and dashboard grid
+│   ├── interview/           # Live mock interview simulator environment
+│   │   ├── interview.html   # Mock interview workspace with chat and webcam simulation
+│   │   └── interview.css    # Layout and animation for active interview panel
+│   ├── login/               # User authentication and login portal
+│   │   ├── login.html       # Authentication form layout
+│   │   └── login.css        # Styles for the login cards and glassmorphic inputs
+│   ├── profile/             # User profile settings and preferences page
+│   │   ├── profile.html     # User profile and details update page
+│   │   └── profile.css      # Styling for profile inputs and image upload UI
+│   ├── register/            # Account creation and registration form
+│   │   ├── register.html    # Signup and onboarding form layout
+│   │   └── register.css     # Styling for registration cards and validations
+│   └── result/              # Interactive AI feedback and score breakdown portal
+│       ├── result.html      # Scorecard and feedback presentation dashboard
+│       └── result.css       # Visual progress bars and breakdown style definitions
+├── backend/                 # API service components (To be initialized)
+├── docs/                    # Development documentation and system design assets
+├── LICENSE                  # MIT License details
+└── README.md                # Project documentation and roadmap log
 ```
-
----
-
-## ✨ Planned Features
-
-### Authentication
-
-* Register
-* Login
-* Logout
-* User Profile
-
-### Interview Module
-
-* Select Job Role
-* Start Interview
-* Submit Answers
-* Interview History
-
-### AI Features
-
-* AI Question Generation
-* AI Answer Evaluation
-* AI Feedback
-* AI Improvement Suggestions
-* AI Follow-up Questions
-
-### Analytics
-
-* Performance Dashboard
-* Score Tracking
-* Interview Statistics
-
-### Reports
-
-* PDF Report Download
 
 ---
 
 ## 📈 Development Progress Log
 
-### Day 1 - 6 June 2026
+### Day 1
+* Initialized project workspace, repository, and created the core landing files: [index.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/index.html), [style.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/style.css), [shared.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/shared.css), and [script.js](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/script.js).
+* Configured basic project setup including repository subfolders, license, and global gitignore.
 
-#### Completed
+### Day 2
+* Created the login interface components: [login.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/login/login.html) and [login.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/login/login.css).
+* Designed user login form structure, input labels, login button, and landing redirects.
 
-* Created GitHub Repository
-* Added README.md
-* Added MIT License
-* Added Python .gitignore
-* Created Project Folder Structure
-* Created Frontend Folder
-* Created index.html
-* Created style.css
-* Created script.js
-* Successfully Connected GitHub Repository
-* Successfully Ran Project Using Five Server
-* Started Landing Page Development
-* Created Landing Page Structure
+### Day 3
+* Designed registration form components: [register.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/register/register.html) and [register.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/register/register.css).
+* Configured validation UI, hover transitions, and redirection paths back to login page.
 
-  * Navbar
-  * Hero Section
-  * Features Section
-  * Footer
+### Day 4
+* Developed student dashboard components: [dashboard.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/dashboard/dashboard.html) and [dashboard.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/dashboard/dashboard.css).
+* Built progress tracking widgets, statistics grid layout, and navigation redirection items.
 
-#### Summary
-
-Project initialization completed successfully. Basic frontend structure was created and the InterviewAI landing page development was started. The overall layout and page sections were planned and implemented for Version 1.
-
-#### Time Spent
-
-3 Hours
-
+### Day 5
+* Designed mock simulation and results screens: [interview.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/interview/interview.html), [interview.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/interview/interview.css), [result.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/result/result.html), and [result.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/result/result.css).
+* Created user profile view and configuration components: [profile.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/profile/profile.html) and [profile.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/profile/profile.css).
 
 ---
 
-### Day 2 - 7 June 2026
+## 🎯 Current Status & Next Steps
 
-#### Completed
-
-* Created Login Page UI
-* Created login.css
-* Designed Login Form
-* Added Login Button
-* Added Register Page Navigation Link
-
-#### Summary
-
-Built the Login Page interface and revised HTML forms, labels, inputs, buttons, and CSS styling concepts.
+*   **Current Milestone**: Core HTML/CSS Frontend UI Structure Completed (Landing, Login, Register, Dashboard, Interview, Result, Profile).
+*   **Next Milestone**: Implementing JavaScript client-side validations, state management, and page transition enhancements.
+*   **Backend Milestone**: Initializing the Django REST API structure, model design, and MySQL database connection.
 
 ---
-
-### Day 3 - 8 June 2026
-
-#### Completed
-
-* Created Register Page UI
-* Created register.css
-* Added Registration Form
-* Added Login Navigation Link
-* Improved Authentication Page Design
-
-#### Summary
-
-Built the user registration interface and connected authentication page navigation.
-
----
-
-### Day 4 - 9 June 2026
-
-#### Completed
-
-* Created Dashboard Page UI
-* Added Statistics Cards
-* Added Start Interview Button
-* Added Dashboard Navigation
-* Improved Dashboard Layout
-
-#### Summary
-
-Built the Dashboard interface to display interview statistics and provide access to interview sessions.
-
----
-
-### Day 5 - 10 June 2026
-
-#### Completed
-
-* Created Interview Page UI
-* Created Result Page UI
-* Created Profile Page UI
-* Added Features Section
-* Added How It Works Section
-* Added Contact Section
-* Improved Landing Page Design
-* Connected Frontend Navigation
-
-#### Summary
-
-Completed the first version of the InterviewAI frontend including Interview, Result, Profile, and Landing Page improvements. Connected all major pages and finalized the frontend structure.
-
----
-
-## 🎯 Current Status
-
-Current Phase:
-Frontend Development
-
-Current Milestone:
-Landing Page, Login, Register, Dashboard, Interview, Result and Profile Pages Completed
-
-Current Task:
-Frontend Optimization and Navigation Review
-
-Next Task:
-JavaScript Form Validation
-Form Handling
-Interactive Features
-
-Frontend Progress:
-90% Complete
-
-Last Updated:
-11 June 2026
-
-
 
 ## 📅 Roadmap
 
-* Frontend
-* Django Backend
-* MySQL Integration
-* REST APIs
-* Gemini AI Integration
-* Analytics Dashboard
-* PDF Reports
-* Deployment
+- [x] Version 1 Frontend static design and page layouts
+- [ ] Client-side interactivity and validation (Vanilla JS)
+- [ ] Django REST Framework backend setup and MySQL schema design
+- [ ] Gemini API integration for dynamic AI interviews
+- [ ] Session tracking, history database, and progress dashboards
+- [ ] PDF report export functionality
+- [ ] Deploying client-side and server-side components to production
 
 ---
 
-## 👨‍💻 Developer
+## 👨‍💻 Developer & Learning Philosophy
 
-Babai (BCA Student)
+**Babai** (BCA Student)
 
-Learning Philosophy:
-
-> Learn With Practical.
-> Build First. Learn Along The Way.
+> 🚀 **Learning Philosophy**: Learn With Practical. Build first. Learn along the way.
 
 ---
 
-## ⭐ Future Goal
+## ⭐ Future Goals
 
-Transform InterviewAI into a production-ready AI platform that can be used by students and job seekers for interview preparation.
+Our long-term target is to transition InterviewAI from a practice repository into a production-grade SaaS tool. We aim to support audio-to-text response submission, multiple concurrent languages, resume-based tailoring, and coding environment mock panels to prepare applicants for top-tier software developer interviews.
