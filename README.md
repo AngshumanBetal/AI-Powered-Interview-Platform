@@ -72,27 +72,27 @@ AI-Powered-Interview-Platform/
 │       ├── result.css         # Visual progress bars and breakdown style definitions
 │       └── result.js          # Load result from session, score animation, Q&A breakdown
 ├── backend/                   # Flask REST API service
-│   ├── app.py                 # Main Flask server — all API routes and entry point
+│   ├── app.py                 # Main Flask server — CV upload, interview, evaluate routes
 │   ├── config.py              # Environment configuration (DB, API keys, upload settings)
 │   ├── cv_parser.py           # CV/Resume parser — extracts skills, education, experience
 │   ├── db_manager.py          # MySQL connection manager — all database CRUD operations
 │   ├── setup_db.sql           # SQL schema — all table definitions and relationships
-│   └── requirements.txt       # Python dependencies (Flask, Gemini, PyJWT, bcrypt, etc.)
-├── accounts/                  # Django app — User authentication (future migration)
-│   ├── admin.py               # Django admin configuration
-│   ├── apps.py                # App configuration
+│   └── requirements.txt       # Python dependencies (Flask, Gemini, mysql-connector, etc.)
+├── accounts/                  # Django app — User model and authentication (future DRF)
 │   ├── models.py              # User model definitions
 │   ├── views.py               # Django view handlers
 │   ├── urls.py                # URL routing for accounts app
-│   └── migrations/            # Django database migration files
+│   ├── admin.py               # Django admin configuration
+│   ├── apps.py                # App configuration
+│   └── migrations/            # Django auto-generated migration files
 ├── intervirwai/               # Django project configuration
-│   ├── settings.py            # Django project settings (DB, installed apps, middleware)
-│   ├── urls.py                # Root URL configuration
-│   ├── asgi.py                # ASGI entry point for async deployment
-│   └── wsgi.py                # WSGI entry point for production deployment
+│   ├── settings.py            # Project settings — apps, DB, middleware, static files
+│   ├── urls.py                # Root URL dispatcher
+│   ├── asgi.py                # ASGI entry point for async/production deployment
+│   └── wsgi.py                # WSGI entry point for traditional deployment
 ├── docs/                      # Development documentation and system design assets
-├── db.sqlite3                 # Django default SQLite database (development only)
-├── manage.py                  # Django management command entry point
+├── db.sqlite3                 # Django SQLite database (development only)
+├── manage.py                  # Django CLI management entry point
 ├── LICENSE                    # MIT License details
 └── README.md                  # Project documentation and roadmap log
 ```
@@ -122,19 +122,18 @@ AI-Powered-Interview-Platform/
 * Created user profile view and configuration components: [profile.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/profile/profile.html) and [profile.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/profile/profile.css).
 
 ### Day 6
-* Created all client-side JavaScript logic files: [login.js](frontend/login/login.js), [register.js](frontend/register/register.js), [dashboard.js](frontend/dashboard/dashboard.js), [profile.js](frontend/profile/profile.js), and [result.js](frontend/result/result.js).
-* Implemented form validation, password strength meter, and auth-guard redirects across all pages.
-* Added password show/hide toggle, animated score counters, and dynamic history rendering on the dashboard.
-* Updated [api.js](frontend/api.js) with `startInterview()` and `evaluateInterview()` methods, including full mock fallback (platform works without backend).
-* Updated [interview.js](frontend/interview/interview.js) to use the unified API utility for question fetching and evaluation.
-* Enhanced [script.js](frontend/script.js) with scroll-triggered animations, smooth anchor scrolling, and navbar shadow on scroll.
+* Created all client-side JavaScript logic files for every page: [login.js](frontend/login/login.js), [register.js](frontend/register/register.js), [dashboard.js](frontend/dashboard/dashboard.js), [profile.js](frontend/profile/profile.js), and [result.js](frontend/result/result.js).
+* Implemented form validation, password strength meter, auth-guard redirects, and logout button across all authenticated pages.
+* Added password show/hide toggle on the login page and animated score count-up on the result page.
+* Updated [api.js](frontend/api.js) with `startInterview()` and `evaluateInterview()` methods — includes full mock question bank and mock evaluation fallback so the platform works even without a running backend.
+* Updated [interview.js](frontend/interview/interview.js) to use the unified API utility instead of raw fetch calls — automatic offline fallback included.
+* Enhanced [script.js](frontend/script.js) with scroll-triggered IntersectionObserver animations, smooth anchor scrolling, and dynamic navbar shadow effect.
 
 ### Day 7
-* Created [auth.py](backend/auth.py) — Flask Blueprint for User Authentication: Register, Login, Logout, and Profile endpoints with JWT token support.
-* Updated [db_manager.py](backend/db_manager.py) — added `create_user()`, `get_user_by_email()`, `save_interview_result()`, and `get_interview_history()` methods; added `interview_sessions` table.
-* Updated [app.py](backend/app.py) — registered Auth Blueprint, added `/api/profile` and `/api/history` routes with real JWT validation.
-* Updated [setup_db.sql](backend/setup_db.sql) — added `interview_sessions` and `interview_answers` tables.
-* Updated [requirements.txt](backend/requirements.txt) — added `PyJWT` and `bcrypt` dependencies.
+* Initialized the Django project inside the repository: integrated [manage.py](manage.py), [intervirwai/](intervirwai/) project configuration, and [accounts/](accounts/) Django app into the main repo folder.
+* Configured [intervirwai/settings.py](intervirwai/settings.py) with `accounts` app registered under `INSTALLED_APPS` — prepared for future Django REST Framework migration.
+* Set up [accounts/models.py](accounts/models.py), [accounts/views.py](accounts/views.py), and [accounts/urls.py](accounts/urls.py) as the foundation for the future Django user authentication system.
+* Updated [README.md](README.md) — added complete project structure, Day 6 & 7 progress log, updated roadmap checkboxes and current milestone status.
 
 ---
 
