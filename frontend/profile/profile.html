@@ -1,49 +1,76 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | InterviewAI</title>
-    <link rel="stylesheet" href="profile.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Update your personal details, target IT role, skills, and experience level on InterviewAI.">
+  <title>Profile | InterviewAI</title>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="profile.css">
 </head>
-
 <body>
+  <header class="topbar">
+    <a class="logo" href="../index.html">InterviewAI</a>
+    <nav>
+      <a href="../dashboard/dashboard.html">Dashboard</a>
+      <a href="../interview/interview.html">Interview</a>
+      <a href="../result/result.html">Results</a>
+      <a href="profile.html" aria-current="page">Profile</a>
+    </nav>
+  </header>
 
-```
-<main class="profile-page">
+  <main class="profile-page">
+    <div class="profile-glow"></div>
+    
+    <section class="profile-panel glass-card animate-fade-up">
+      <span class="eyebrow">Settings</span>
+      <h1>My Profile</h1>
+      <p class="profile-subtitle">Update your preferences and target role for personalized interview questions.</p>
 
-    <section class="profile-panel">
+      <form id="profile-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
 
-        <h1>My Profile</h1>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" readonly style="opacity: 0.6; cursor: not-allowed;">
+        </div>
 
-        <form>
+        <div class="form-group">
+          <label for="role">Target Role</label>
+          <input type="text" id="role" name="role" placeholder="e.g., Python Developer, Data Scientist" required>
+        </div>
 
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name">
+        <div class="form-group">
+          <label for="skills">Skills (Comma separated)</label>
+          <input type="text" id="skills" name="skills" placeholder="e.g., Python, SQL, Git, Machine Learning" required>
+        </div>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your email">
+        <div class="form-group">
+          <label for="experience">Experience Level</label>
+          <select id="experience" name="experience" required>
+            <option value="" disabled selected>Select your experience level</option>
+            <option value="Beginner">Beginner (0-2 years)</option>
+            <option value="Intermediate">Intermediate (2-5 years)</option>
+            <option value="Advanced">Advanced (5+ years)</option>
+          </select>
+        </div>
 
-            <label for="role">Target Role</label>
-            <input type="text" id="role" name="role" placeholder="Example: Python Developer">
+        <div class="error-msg" id="profile-error" style="display:none;"></div>
+        <div class="success-msg" id="profile-success" style="display:none;"></div>
 
-            <label for="skills">Skills</label>
-            <input type="text" id="skills" name="skills" placeholder="Python, HTML, CSS, JavaScript">
-
-            <label for="experience">Experience Level</label>
-            <input type="text" id="experience" name="experience" placeholder="Beginner / Intermediate / Advanced">
-
-            <button type="submit">Save Profile</button>
-
-        </form>
-
+        <button type="submit" class="form-btn">Save Profile</button>
+      </form>
     </section>
+  </main>
 
-</main>
-```
+  <footer>
+    <p>&copy; 2026 InterviewAI. All Rights Reserved.</p>
+  </footer>
 
+  <script src="../api.js"></script>
+  <script src="profile.js"></script>
 </body>
-
 </html>

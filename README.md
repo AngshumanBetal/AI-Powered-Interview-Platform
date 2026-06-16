@@ -94,23 +94,40 @@ AI-Powered-Interview-Platform/
 * Designed mock simulation and results screens: [interview.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/interview/interview.html), [interview.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/interview/interview.css), [result.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/result/result.html), and [result.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/result/result.css).
 * Created user profile view and configuration components: [profile.html](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/profile/profile.html) and [profile.css](file:///d:/Desktop/AI-Powered-Interview-Platform/AI-Powered-Interview-Platform/frontend/profile/profile.css).
 
+### Day 6
+* Created all client-side JavaScript logic files: [login.js](frontend/login/login.js), [register.js](frontend/register/register.js), [dashboard.js](frontend/dashboard/dashboard.js), [profile.js](frontend/profile/profile.js), and [result.js](frontend/result/result.js).
+* Implemented form validation, password strength meter, and auth-guard redirects across all pages.
+* Added password show/hide toggle, animated score counters, and dynamic history rendering on the dashboard.
+* Updated [api.js](frontend/api.js) with `startInterview()` and `evaluateInterview()` methods, including full mock fallback (platform works without backend).
+* Updated [interview.js](frontend/interview/interview.js) to use the unified API utility for question fetching and evaluation.
+* Enhanced [script.js](frontend/script.js) with scroll-triggered animations, smooth anchor scrolling, and navbar shadow on scroll.
+
+### Day 7
+* Created [auth.py](backend/auth.py) — Flask Blueprint for User Authentication: Register, Login, Logout, and Profile endpoints with JWT token support.
+* Updated [db_manager.py](backend/db_manager.py) — added `create_user()`, `get_user_by_email()`, `save_interview_result()`, and `get_interview_history()` methods; added `interview_sessions` table.
+* Updated [app.py](backend/app.py) — registered Auth Blueprint, added `/api/profile` and `/api/history` routes with real JWT validation.
+* Updated [setup_db.sql](backend/setup_db.sql) — added `interview_sessions` and `interview_answers` tables.
+* Updated [requirements.txt](backend/requirements.txt) — added `PyJWT` and `bcrypt` dependencies.
+
 ---
 
 ## 🎯 Current Status & Next Steps
 
-*   **Current Milestone**: Core HTML/CSS Frontend UI Structure Completed (Landing, Login, Register, Dashboard, Interview, Result, Profile).
-*   **Next Milestone**: Implementing JavaScript client-side validations, state management, and page transition enhancements.
-*   **Backend Milestone**: Initializing the Django REST API structure, model design, and MySQL database connection.
+*   **Current Milestone**: Full Frontend JavaScript Wiring + Backend Auth API completed (Day 6 & 7).
+*   **Next Milestone**: Django REST Framework migration and full Gemini API end-to-end integration.
+*   **Deployment Milestone**: Connecting backend to production MySQL and hosting the full platform.
 
 ---
 
 ## 📅 Roadmap
 
-- [x] Version 1 Frontend static design and page layouts
-- [ ] Client-side interactivity and validation (Vanilla JS)
-- [ ] Django REST Framework backend setup and MySQL schema design
-- [ ] Gemini API integration for dynamic AI interviews
-- [ ] Session tracking, history database, and progress dashboards
+- [x] Version 1 Frontend static design and page layouts *(Day 1–5)*
+- [x] Client-side interactivity and validation — Vanilla JS *(Day 6)*
+- [x] Flask REST backend — CV parsing + AI question generation *(Day 5 bonus)*
+- [x] User Authentication API — Register / Login / JWT *(Day 7)*
+- [ ] Django REST Framework migration
+- [ ] Gemini API full integration (end-to-end interview flow)
+- [ ] Session tracking and history dashboard with real database
 - [ ] PDF report export functionality
 - [ ] Deploying client-side and server-side components to production
 

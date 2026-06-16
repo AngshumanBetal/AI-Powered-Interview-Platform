@@ -73,17 +73,28 @@ nav button{
     display:flex;
     justify-content:center;
     gap:25px;
-
     padding:50px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 40px auto 0;
+}
+
+.feature-grid .card {
+  width: 100%;
+  margin: 0;
 }
 
 .card{
     width:300px;
     padding:25px;
-
     border:1px solid #ddd;
     border-radius:10px;
-
     text-align:center;
 }
 
@@ -142,4 +153,11 @@ footer{
 .contact {
     padding: 80px 20px;
     text-align: center;
+}
+
+@media (max-width: 900px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+  }
 }

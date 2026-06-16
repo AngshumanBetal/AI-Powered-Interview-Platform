@@ -277,3 +277,143 @@
     width: 100%;
   }
 }
+
+/* ── CV Upload Section ────────────────────────────────────────────── */
+.cv-upload-section {
+  margin-top: 32px;
+  margin-bottom: 28px;
+}
+
+.cv-upload-section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.optional-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cv-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.cv-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 24px;
+  background: var(--surface);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color 0.22s var(--ease), background 0.22s var(--ease);
+}
+
+.cv-dropzone:hover,
+.cv-dropzone.dragover {
+  border-color: var(--primary);
+  background: rgba(108, 92, 231, 0.04);
+}
+
+.cv-dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.cv-icon {
+  color: var(--text-secondary);
+  transition: color 0.2s var(--ease);
+}
+
+.cv-dropzone:hover .cv-icon {
+  color: var(--primary-light);
+}
+
+.cv-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.cv-formats {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+.cv-file-info {
+  margin-top: 14px;
+}
+
+.cv-file-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: rgba(108, 92, 231, 0.08);
+  border: 1px solid rgba(108, 92, 231, 0.25);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.cv-remove {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0 4px;
+  margin-left: 4px;
+  transition: color 0.2s var(--ease);
+}
+
+.cv-remove:hover {
+  color: var(--danger);
+}
+
+/* ── API Key Section ─────────────────────────────────────────────── */
+.api-key-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.api-key-section label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.api-help {
+  font-size: 0.8rem;
+  color: var(--primary-light);
+  font-weight: 600;
+  transition: color 0.2s var(--ease);
+}
+
+.api-help:hover {
+  color: var(--accent);
+}
+

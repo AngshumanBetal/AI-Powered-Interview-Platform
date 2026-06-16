@@ -50,6 +50,13 @@
       </article>
     </section>
 
+    <section class="history-section glass-card animate-fade-up delay-3">
+      <h2>Recent Practice History</h2>
+      <div class="history-list" id="history-list">
+        <p class="no-history">Loading practice history...</p>
+      </div>
+    </section>
+
     <section class="panel glass-card animate-fade-up delay-4">
       <div class="panel-content">
         <h2>Ready for your next practice session?</h2>
@@ -59,25 +66,7 @@
     </section>
   </main>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      try {
-        const history = JSON.parse(localStorage.getItem('interviewHistory') || '[]');
-        if (history.length > 0) {
-          const completedCount = history.length;
-          const totalScore = history.reduce((sum, item) => sum + (item.score || 0), 0);
-          const averageScore = Math.round(totalScore / completedCount);
-
-          const values = document.querySelectorAll('.stat-value');
-          if (values.length >= 2) {
-            values[0].textContent = completedCount;
-            values[1].textContent = averageScore + '%';
-          }
-        }
-      } catch (e) {
-        console.error('Failed to load dashboard stats:', e);
-      }
-    });
-  </script>
+  <script src="../api.js"></script>
+  <script src="dashboard.js"></script>
 </body>
 </html>
