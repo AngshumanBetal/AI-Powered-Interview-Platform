@@ -41,33 +41,60 @@ Leveraging the power of the **Gemini API**, the application dynamically generate
 
 ```text
 AI-Powered-Interview-Platform/
-├── frontend/                # Client-side web application
-│   ├── index.html           # Main landing page for the application
-│   ├── style.css            # Custom layout and animations for landing page
-│   ├── shared.css           # Global typography, color tokens, and utility classes
-│   ├── script.js            # Frontend router and interactive transitions
-│   ├── dashboard/           # User dashboard for tracking preparation progress
-│   │   ├── dashboard.html   # Dashboard interface layout
-│   │   └── dashboard.css    # Styles for statistics cards and dashboard grid
-│   ├── interview/           # Live mock interview simulator environment
-│   │   ├── interview.html   # Mock interview workspace with chat and webcam simulation
-│   │   └── interview.css    # Layout and animation for active interview panel
-│   ├── login/               # User authentication and login portal
-│   │   ├── login.html       # Authentication form layout
-│   │   └── login.css        # Styles for the login cards and glassmorphic inputs
-│   ├── profile/             # User profile settings and preferences page
-│   │   ├── profile.html     # User profile and details update page
-│   │   └── profile.css      # Styling for profile inputs and image upload UI
-│   ├── register/            # Account creation and registration form
-│   │   ├── register.html    # Signup and onboarding form layout
-│   │   └── register.css     # Styling for registration cards and validations
-│   └── result/              # Interactive AI feedback and score breakdown portal
-│       ├── result.html      # Scorecard and feedback presentation dashboard
-│       └── result.css       # Visual progress bars and breakdown style definitions
-├── backend/                 # API service components (To be initialized)
-├── docs/                    # Development documentation and system design assets
-├── LICENSE                  # MIT License details
-└── README.md                # Project documentation and roadmap log
+├── frontend/                  # Client-side web application
+│   ├── index.html             # Main landing page for the application
+│   ├── style.css              # Custom layout and animations for landing page
+│   ├── shared.css             # Global typography, color tokens, and utility classes
+│   ├── script.js              # Landing page router, scroll animations, smart navbar
+│   ├── api.js                 # Unified API client (backend + localStorage fallback)
+│   ├── dashboard/             # User dashboard for tracking preparation progress
+│   │   ├── dashboard.html     # Dashboard interface layout
+│   │   ├── dashboard.css      # Styles for statistics cards and dashboard grid
+│   │   └── dashboard.js       # Auth guard, history stats, animated counters, logout
+│   ├── interview/             # Live mock interview simulator environment
+│   │   ├── interview.html     # Mock interview workspace with field selector and CV upload
+│   │   ├── interview.css      # Layout and animation for active interview panel
+│   │   └── interview.js       # CV upload, Gemini Q&A flow, evaluation, mock fallback
+│   ├── login/                 # User authentication and login portal
+│   │   ├── login.html         # Authentication form layout
+│   │   ├── login.css          # Styles for the login cards and glassmorphic inputs
+│   │   └── login.js           # Form validation, password toggle, API login, redirect
+│   ├── profile/               # User profile settings and preferences page
+│   │   ├── profile.html       # User profile and details update page
+│   │   ├── profile.css        # Styling for profile inputs and image upload UI
+│   │   └── profile.js         # Load/save profile via API, skills counter, logout
+│   ├── register/              # Account creation and registration form
+│   │   ├── register.html      # Signup and onboarding form layout
+│   │   ├── register.css       # Styling for registration cards and validations
+│   │   └── register.js        # Password strength meter, API register, redirect
+│   └── result/                # Interactive AI feedback and score breakdown portal
+│       ├── result.html        # Scorecard and feedback presentation dashboard
+│       ├── result.css         # Visual progress bars and breakdown style definitions
+│       └── result.js          # Load result from session, score animation, Q&A breakdown
+├── backend/                   # Flask REST API service
+│   ├── app.py                 # Main Flask server — all API routes and entry point
+│   ├── config.py              # Environment configuration (DB, API keys, upload settings)
+│   ├── cv_parser.py           # CV/Resume parser — extracts skills, education, experience
+│   ├── db_manager.py          # MySQL connection manager — all database CRUD operations
+│   ├── setup_db.sql           # SQL schema — all table definitions and relationships
+│   └── requirements.txt       # Python dependencies (Flask, Gemini, PyJWT, bcrypt, etc.)
+├── accounts/                  # Django app — User authentication (future migration)
+│   ├── admin.py               # Django admin configuration
+│   ├── apps.py                # App configuration
+│   ├── models.py              # User model definitions
+│   ├── views.py               # Django view handlers
+│   ├── urls.py                # URL routing for accounts app
+│   └── migrations/            # Django database migration files
+├── intervirwai/               # Django project configuration
+│   ├── settings.py            # Django project settings (DB, installed apps, middleware)
+│   ├── urls.py                # Root URL configuration
+│   ├── asgi.py                # ASGI entry point for async deployment
+│   └── wsgi.py                # WSGI entry point for production deployment
+├── docs/                      # Development documentation and system design assets
+├── db.sqlite3                 # Django default SQLite database (development only)
+├── manage.py                  # Django management command entry point
+├── LICENSE                    # MIT License details
+└── README.md                  # Project documentation and roadmap log
 ```
 
 ---
